@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from "~/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetDescription } from "~/components/ui/sheet";
-import { Menu, Home, ListTodo, Settings, User, HelpCircle, LogOut, X } from "lucide-react";
+import { Menu, Home, ListTodo, Settings, User, HelpCircle, LogOut } from "lucide-react";
 import ThemeToggle from './ThemeToggle';
 import { Separator } from "~/components/ui/separator";
 import {
