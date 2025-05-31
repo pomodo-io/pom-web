@@ -3,6 +3,7 @@ import "~/styles/globals.css";
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "~/context/ThemeContext";
+import Footer from "~/components/homepage/Footer";
 
 export const metadata: Metadata = {
   title: "Pomodo.io",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <Footer />
       </body>
     </html>
   );
