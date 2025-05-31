@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "~/context/ThemeContext";
 import Footer from "~/components/homepage/Footer";
+import Header from "~/components/Header";
 
 export const metadata: Metadata = {
   title: "Pomodo.io",
@@ -21,11 +22,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className="bg-[#f0f0f0] text-[#333] dark:bg-[#000] dark:text-[#fff] transition-colors">
-        <ThemeProvider>
-          {children}
+      <body>
+        <div className="bg-[#7a9bc7]">
+          <Header />
+          <ThemeProvider>
+            <div className="min-h-[calc(100vh-106px)]">
+              {children}
+            </div>
         </ThemeProvider>
         <Footer />
+        </div>
       </body>
     </html>
   );

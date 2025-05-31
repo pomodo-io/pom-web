@@ -1,8 +1,6 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link";
-import { Instagram, Linkedin } from "lucide-react";
 import { Montserrat } from "next/font/google"; 
 import { motion } from "framer-motion"; 
 import { ShimmerButton } from "~/components/magicui/shimmer-button";
@@ -28,79 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#7a9bc7] relative overflow-hidden">
-      {/* Animated background pattern */}
-      <motion.div 
-        className="absolute inset-0 opacity-10"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-50" />
-      </motion.div>
-
-      <header className="container mx-auto flex items-center justify-between px-4 py-6 relative z-10">
-        <motion.div 
-          className="flex items-center gap-2"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <Image src="/POM-Logo.svg" alt="Pomodo.io Logo" width={50} height={50} className="mt-2" />
-          <span className="text-2xl font-bold text-white drop-shadow-lg">pomodo.io</span>
-        </motion.div>
-
-        <motion.nav 
-          className="hidden items-center gap-8 md:flex"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {['Register', 'Sign in', 'About', 'Pricing'].map((item, index) => (
-            <motion.div
-              key={item}
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href={`/${item.toLowerCase().replace(' ', '')}`}
-                className="text-white transition-colors hover:text-white/80"
-              >
-                {item}
-              </Link>
-            </motion.div>
-          ))}
-        </motion.nav>
-
-        <motion.div 
-          className="flex items-center gap-4"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <motion.div whileHover={{ scale: 1.2, rotate: 5 }} whileTap={{ scale: 0.9 }}>
-            <Link
-              href="https://instagram.com"
-              aria-label="Instagram"
-              className="text-white transition-colors hover:text-white/80"
-            >
-              <Instagram size={20} />
-            </Link>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.2, rotate: -5 }} whileTap={{ scale: 0.9 }}>
-            <Link
-              href="https://linkedin.com"
-              aria-label="LinkedIn"
-              className="text-white transition-colors hover:text-white/80"
-            >
-              <Linkedin size={20} />
-            </Link>
-          </motion.div>
-        </motion.div>
-      </header>
-
-      <main className="container mx-auto flex flex-col items-center px-4 py-16 lg:flex-row lg:py-24 relative z-10">
+    <main className="container mx-auto flex flex-col items-center px-4 py-16 lg:flex-row lg:py-24 relative z-10">
         <motion.div
           className={`mb-10 text-center lg:mb-0 lg:w-1/2 lg:text-left ${montserrat.className}`}
           initial={{ opacity: 0, y: 20 }}
@@ -206,6 +132,5 @@ export default function Home() {
           </div>
         </motion.div>
       </main>
-    </div>
   );
 }
