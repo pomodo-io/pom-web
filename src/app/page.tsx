@@ -5,6 +5,8 @@ import { Montserrat } from "next/font/google";
 import { motion } from "framer-motion"; 
 import { ShimmerButton } from "~/components/magicui/shimmer-button";
 import { useEffect, useState } from "react";
+import Header from "~/components/homepage/Header";
+import Footer from "~/components/homepage/Footer";
 
 // Initialize Montserrat with desired weights and subsets
 const montserrat = Montserrat({
@@ -26,6 +28,9 @@ export default function Home() {
   }, []);
 
   return (
+    <div>
+    <div className="bg-[#7a9bc7] min-h-screen">
+      <Header />
     <main className="container mx-auto flex flex-col items-center px-4 py-16 lg:flex-row lg:py-24 relative z-10">
         <motion.div
           className={`mb-10 text-center lg:mb-0 lg:w-1/2 lg:text-left ${montserrat.className}`}
@@ -132,5 +137,10 @@ export default function Home() {
           </div>
         </motion.div>
       </main>
+      </div>
+      <div className="bg-[#7a9bc7]">
+        <Footer />
+      </div>
+      </div>
   );
 }

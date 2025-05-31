@@ -1,5 +1,5 @@
 import React from 'react';
-import { useBreakpoints } from '../hooks/use-mobile';
+import { useBreakpoints } from '~/hooks/use-mobile';
 
 const PomodoroTimer: React.FC = () => {
   const { isMobile, isTablet } = useBreakpoints();

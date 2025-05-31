@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { Button } from './ui/button';
+import { Button } from '~/components/ui/button';
 import { Mic, MicOff, Video, VideoOff, MessageCircle, Smile } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '~/components/dashboard/ThemeToggle';
 
 interface DockProps {
   onChatToggle?: () => void;

@@ -3,11 +3,9 @@ import "~/styles/globals.css";
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "~/context/ThemeContext";
-import Footer from "~/components/homepage/Footer";
-import Header from "~/components/Header";
 
 export const metadata: Metadata = {
-  title: "Pomodo.io",
+  title: "pomodo.io - Keep yourself accountable",
   description: "Your personal productivity companion",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
@@ -23,15 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body>
-        <div className="bg-[#7a9bc7]">
-          <Header />
-          <ThemeProvider>
-            <div className="min-h-[calc(100vh-106px)]">
-              {children}
-            </div>
+        <ThemeProvider>
+          {children}
         </ThemeProvider>
-        <Footer />
-        </div>
       </body>
     </html>
   );
